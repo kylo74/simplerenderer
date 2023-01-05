@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -22,7 +24,23 @@ public class Main {
                 g2.setColor(Color.BLACK);
                 g2.fillRect(0, 0, getWidth(), getHeight());
 
-                // rendering magic will happen here
+                List tris = new ArrayList<>();
+                tris.add(new Triangle(new Vertex(100, 100, 100),
+                        new Vertex(-100, -100, 100),
+                        new Vertex(-100, 100, -100),
+                        Color.WHITE));
+                tris.add(new Triangle(new Vertex(100, 100, 100),
+                        new Vertex(-100, -100, 100),
+                        new Vertex(100, -100, -100),
+                        Color.RED));
+                tris.add(new Triangle(new Vertex(-100, 100, -100),
+                        new Vertex(100, -100, -100),
+                        new Vertex(100, 100, 100),
+                        Color.GREEN));
+                tris.add(new Triangle(new Vertex(-100, 100, -100),
+                        new Vertex(100, -100, -100),
+                        new Vertex(-100, -100, 100),
+                        Color.BLUE));
             }
         };
         pane.add(renderPanel, BorderLayout.CENTER);
